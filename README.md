@@ -1,7 +1,7 @@
-# Vocab-Trainer
-This App is intended for students of the German language that want to practice nouns and articles.
+# Vokabel-Trainer
+This App is intended for students of the German language that want to practice nouns and articles. It is currently under development.
 
-# How to Use Vocab-Trainer - not yet functional
+# How to Use Vokabel-Trainer in the future
 Clone the repository and run the command "node server.js" to set up your server. Inside your browser use the url "localhost:3000". 
 Under "Play!" you can match pairs of nouns and articles. Your successful matches will be shown in the results table.
 Under "Add Words" you can add nouns to the database, which will show up randomly in the matching pairs game.

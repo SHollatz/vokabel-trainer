@@ -1,11 +1,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const verbSchema = new Schema({
+const wordSchema = new Schema({
   word: {
     type: String,
     required: true,
     minlength: [2, "Please enter a word with at least 2 characters."],
+  },
+  partOfSpeech: {
+    type: String,
+    required: true,
+    enum: ["noun", "verb", "adjective"]
   },
   translation1: {
     type: String,
@@ -33,6 +38,21 @@ const verbSchema = new Schema({
     type: String,
     required: false
   },
+  article: {
+    type: String,
+    required: true,
+    enum: ['der', 'die', 'das', 'ein', 'eine']
+  },
+  gender: {
+    type: String,
+    required: true,
+    enum: ['Maskulinum', 'Femininum', 'Neutrum']
+  },
+  plural: {
+    type: String,
+    required: true,
+    minlength: [2, "Please enter a word with at least 2 characters."],
+  },
   thirdPersPresent: {
     type: String,
     required: true,
@@ -51,5 +71,22 @@ const verbSchema = new Schema({
   separable: {
     type: Boolean,
     required: true
-  }
+  },
+  comparative: {
+    type: String,
+    required: true,
+    minlength: [2, "Please enter a word with at least 2 characters or 'none' if not existent."],
+  },
+  superlative: {
+    type: String,
+    required: true,
+    minlength: [2, "Please enter a word with at least 2 characters or 'none' if not existent."],
+  },
+  exampleSentence: {
+    type: String,
+    required: false
+  },
+  
+  createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date }
 });

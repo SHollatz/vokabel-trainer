@@ -18,7 +18,7 @@
 }
 
 .cards-container {
-  height: 800px;
+  height: 550px;
   width: 850px;
 }
 
@@ -37,6 +37,12 @@
 .clearfloat {
   clear: both;
   overflow: auto;
+}
+
+.message {
+  font-size: 28px;
+  text-align: center;
+  color: orangered;
 }
 
 @media screen and (max-width:980px) {

@@ -19,7 +19,7 @@
     "yarn": "1.10.0"
   },
   "author": "Sabine Hollatz",
-  "license": "",
+  "license": "Copyright, please contact for further information",
   "devDependencies": {
     "concurrently": "^3.5.0",
     "nodemon": "^1.11.0"

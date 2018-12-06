@@ -4,6 +4,9 @@ export default {
   getWord: function(id) {
     return axios.get("/api/words" + id);
   },
+  getWords: function() {
+    return axios.get("/api/words");
+  },
   getNouns: function() {
     return axios.get("/api/nouns");
   },

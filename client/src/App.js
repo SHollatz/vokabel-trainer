@@ -8,26 +8,29 @@ import SignUp from "./pages/SignUp";
 import Navbar from "./components/Navbar";
 import Wrapper from "./components/Wrapper";
 import Footer from "./components/Footer";
+import Exterior from "./components/Exterior";
+import About from "./pages/About";
 import "./App.css";
 
 const App = () => (
   <Router>
+    <Exterior>
       <Navbar />
       <Wrapper>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/user/:id" component={Home} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/noun" component={WordList} />
-          <Route exact path="/noun/:id" component={WordList} />
-          <Route exact path="/verb" component={WordList} />
-          <Route exact path="/verb/:id" component={WordList} />
-          <Route exact path="/adjective" component={WordList} />
-          <Route exact path="/adjective/:id" component={WordList} />
           <Route exact path="/signUp" component={SignUp} />
+          <Route exact path="/words/:id" component={WordList} />
+          <Route exact path="/noun" component={WordList} />
+          <Route exact path="/verb" component={WordList} />
+          <Route exact path="/adjective" component={WordList} />
+          <Route exact path="/games" component={Games} />
+          <Route exact path="/about" component={About} />
         </Switch>
       </Wrapper>
       <Footer />
+    </Exterior>
   </Router>
 );
 

@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+#main_content_about {
+  width: 960px;
+  height: 700px;
+  padding: 40px;
+  font-family: 'Inconsolata', monospace;
+  background-color:#ffffff;
+  position: relative;
+  margin:30px auto 30px auto;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #cccccc;
+  border-radius: 10px;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#portrait {
+  width:273.5px; 
+  height:228px;
+  margin: 10px 20px 5px 10px;
+  float:left;
+}
+
+#about_me {
+  line-height: 1.3;
+  font-size: 26px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width:980px) {
+  #about_me {
+    line-height: 1.3;
+    font-size: 22px;
+    margin:0 10px 10px 5px; 
+  }
+
+#main_content_about {
+    width:700px;
+    height: 700px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  #main_content_about {
+    width:600px;
+    height: 700px;
+    padding: 30px;
+  }
+
+#about_me {
+    font-size: 20px; 
+    line-height: 1.2;   
+  }
+}
+
+@media screen and (max-width:640px) {
+  #main_content_about {
+    width:450px;
+    height:1000px;
+    padding: 20px 20px 20px 20px;
+  }
+
+#portrait {
+    margin:0 0 10px 0;
+    width:364.66px;
+    height: 304px;
+  }
+
+#about_me {
+    margin: 0 auto 10px auto;
+    width:351px;
+  }
+}

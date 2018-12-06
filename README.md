@@ -21,7 +21,7 @@ not published yet
 Sabine Hollatz
 
 # License
-Copyright applies. Please contact me if you intend to use the App and describe the purpose of usage and your organization.
+UNLICENSED
 
 # Contact
 ztallohs@gmail.com

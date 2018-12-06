@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "author": "Sabine Hollatz",
-  "license": "Copyright, please contact for further information",
+  "license": "UNLICENSED",
   "proxy": "http://localhost:3001/",
   "main": "index.js",
   "dependencies": {

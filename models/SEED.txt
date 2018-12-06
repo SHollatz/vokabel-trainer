@@ -1,0 +1,18 @@
+db.words.insertMany([
+  {word: "Tisch", translation1:"table", partOfSpeech: "noun", article: "der", plural: "Tische", gender: "masculine"},
+  {word: "Tasse", translation1:"cup", partOfSpeech: "noun", article: "die", plural: "Tassen", gender: "feminine"},
+  {word: "Auto", translation1:"car", partOfSpeech: "noun", article: "das", plural: "Autos", gender: "neutral"},
+  {word: "Staubsauger", translation1:"vacuum cleaner", partOfSpeech: "noun", article: "der", plural: "Staubsauger", gender: "masculine"},
+  {word: "Heizung", translation1:"heater", partOfSpeech: "noun", article: "die", plural: "Heizungen", gender: "feminine"},
+  {word: "Klavier", translation1:"piano", partOfSpeech: "noun", article: "das", plural: "Klaviere", gender: "neutral"},
+  {word: "Fenster", translation1:"window", partOfSpeech: "noun", article: "das", plural: "Fenster", gender: "neutral"},
+  {word: "Sonnenbrille", translation1:"sunglasses", partOfSpeech: "noun", article: "die", plural: "Sonnenbrillen", gender: "feminine"},
+  {word: "Regenschirm", translation1:"umbrella", partOfSpeech: "noun", article: "der", plural: "Regenschirme", gender: "masculine"},
+  {word: "Lampe", translation1:"lamp", partOfSpeech: "noun", article: "die", plural: "Lampen", gender: "feminine"},
+  {word: "Kleid", translation1:"dress", partOfSpeech: "noun", article: "das", plural: "Kleider", gender: "neutral"},
+  {word: "Tapete", translation1:"wallpaper", partOfSpeech: "noun", article: "die", plural: "Tapeten", gender: "feminine"},
+  {word: "Bilderrahmen", translation1:"picture frame", partOfSpeech: "noun", article: "der", plural: "Bilderrahmen", gender: "masculine"},
+  {word: "Berg", translation1:"mountain", partOfSpeech: "noun", article: "der", plural: "Berge", gender: "masculine"},
+  {word: "Kaffee", translation1:"coffee", partOfSpeech: "noun", article: "der", plural: "Kaffee", gender: "masculine"},
+  {word: "Kaffeemachine", translation1:"coffee maker", partOfSpeech: "noun", article: "die", plural: "Kaffeemaschinen", gender: "feminine"}
+])

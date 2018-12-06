@@ -1,11 +1,11 @@
 import React from "react";
-import "./Container.css";
+import "./wordCard.css";
 
-const Container = props => (
-  <div id="container" className="card">
-    <h3 className="card-header">{props.category}</h3>
-    <div className="card-body wrapper">{props.children}</div>
-  </div>
+const wordCard = props => (
+  <button className = {props.className} 
+          id={props.id} 
+          article={props.article} 
+          partner={props.partner}>{props.word}</button>
 );
 
-export default Container;
+export default wordCard;

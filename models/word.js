@@ -46,7 +46,7 @@ const wordSchema = new Schema({
   gender: {
     type: String,
     required: true,
-    enum: ['Maskulinum', 'Femininum', 'Neutrum']
+    enum: ['masculine', 'feminine', 'neutral']
   },
   plural: {
     type: String,
@@ -90,3 +90,7 @@ const wordSchema = new Schema({
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date }
 });
+
+const Word = mongoose.model("Word", wordSchema);
+
+module.exports = Word;

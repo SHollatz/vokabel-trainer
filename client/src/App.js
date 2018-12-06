@@ -22,9 +22,9 @@ const App = () => (
           <Route exact path="/login" component={Login} />
           <Route exact path="/signUp" component={SignUp} />
           <Route exact path="/words/:id" component={WordList} />
-          <Route exact path="/noun" component={WordList} />
-          <Route exact path="/verb" component={WordList} />
-          <Route exact path="/adjective" component={WordList} />
+          <Route exact path="/words/nouns" component={WordList} />
+          <Route exact path="/words/verbs" component={WordList} />
+          <Route exact path="/words/adjectives" component={WordList} />
           <Route exact path="/games" component={Games} />
           <Route exact path="/about" component={About} />
         </Switch>

@@ -5,16 +5,17 @@ export default {
     return axios.get("/api/words" + id);
   },
   getWords: function() {
+    console.log("inside getWords");
     return axios.get("/api/words");
   },
   getNouns: function() {
-    return axios.get("/api/nouns");
+    return axios.get("/api/words/nouns");
   },
   getVerbs: function() {
-    return axios.get("/api/verbs");
+    return axios.get("/api/words/verbs");
   },
   getAdjectives: function() {
-    return axios.get("/api/adjectives");
+    return axios.get("/api/words/adjectives");
   },
   saveWord: function(wordData) {
     //console.log("inside saveNoun: ", wordData);

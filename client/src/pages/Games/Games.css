@@ -1,0 +1,73 @@
+#games_title {
+  float: left;
+  color:  #216999;
+}
+
+#start {
+  margin-left: 150px;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-delay: 2s;
+  width: 150px;
+  background-color: #216999;
+  border-color:#226da0;
+  border-radius: 5px;
+  border: 1px;
+  color: #faf3d7;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.cards-container {
+  height: 800px;
+  width: 850px;
+}
+
+.main-games {
+  width: 960px;
+  height: 800px;
+  margin: 30px auto 100px auto;
+  padding: 40px 0px 40px 55px;
+  border-radius: 5px;
+  font-family: 'Inconsolata', monospace;
+  background-image:linear-gradient(to top left, #cbe6f8, #ebf4fa);
+  position: relative;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.clearfloat {
+  clear: both;
+  overflow: auto;
+}
+
+@media screen and (max-width:980px) {
+  .games-container {
+    max-width: 760px;
+    height: 500px;
+  }
+
+  hr {
+    width:650px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .games-container {
+    width: 600px;
+    height: 400px;
+  }
+
+  hr {
+    width:530px;
+  }
+}
+
+@media screen and (max-width:640px) {
+  .games-container {
+    width:450px;
+    height:310px;
+  }
+
+  hr {
+    width:400px;
+  }
+}

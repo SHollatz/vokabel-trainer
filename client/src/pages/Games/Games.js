@@ -29,9 +29,6 @@ class Games extends Component {
     API.getWords()
       .then(res => {
         //console.log(res)
-        visibility = ["visible", "visible", "visible", "visible", "visible", "visible", "visible", "visible",
-          "visible", "visible", "visible", "visible", "visible", "visible", "visible", "visible"]
-        results = []
         const articles = [];
         let wordsArray = res.data;
         // console.log("words", wordsArray);
@@ -47,12 +44,22 @@ class Games extends Component {
         this.shuffle(articles)
         // console.log("articles", articles);
         this.setState({
-          visibility: visibility,
           words: words,
           articles: articles,
-          results: results
         });
       }).catch(err => console.log("inside loadWords", err));
+  }
+
+  startOver = () => {
+    visibility = ["visible", "visible", "visible", "visible", "visible", "visible", "visible", "visible",
+          "visible", "visible", "visible", "visible", "visible", "visible", "visible", "visible"]
+        results = []
+    this.setState({
+      visibility: visibility,
+      results: results,
+      message: ""
+    });
+    this.loadWords();
   }
 
   shuffle = (array) => {
@@ -171,8 +178,8 @@ class Games extends Component {
         <h2 id="games_title">Find the Matching Pairs!</h2>
         <button
           className="animated shake"
-          id="start"
-          onClick={this.loadWords}
+          id="startOver"
+          onClick={this.startOver}
         >New Words!</button>
         <br className="clearfloat"></br>
         <hr></hr>

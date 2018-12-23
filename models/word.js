@@ -27,7 +27,7 @@ const wordSchema = new Schema({
   },
   meaning1: {
     type: String,
-    required: true,
+    required: false,
     minlength: [2, "Please enter a word or sentence with at least 2 characters."],
   },
   meaning2: {
@@ -40,51 +40,56 @@ const wordSchema = new Schema({
   },
   article: {
     type: String,
-    required: true,
+    required: false,
     enum: ['der', 'die', 'das', 'ein', 'eine']
   },
   gender: {
     type: String,
-    required: true,
+    required: false,
     enum: ['masculine', 'feminine', 'neutral']
   },
   plural: {
     type: String,
-    required: true,
+    required: false,
     minlength: [2, "Please enter a word with at least 2 characters."],
   },
   thirdPersPresent: {
     type: String,
-    required: true,
+    required: false,
     minlength: [2, "Please enter a word with at least 2 characters."],
   },
   thirdPersonPast: {
     type: String,
-    required: true,
+    required: false,
     minlength: [2, "Please enter a word with at least 2 characters."],
   },
   thirdPersonPerfect: {
     type: String,
-    required: true,
+    required: false,
     minlength: [2, "Please enter a word with at least 2 characters and it's auxiliary verb."],
   },
   separable: {
     type: Boolean,
-    required: true
+    required: false
   },
   comparative: {
     type: String,
-    required: true,
+    required: false,
     minlength: [2, "Please enter a word with at least 2 characters or 'none' if not existent."],
   },
   superlative: {
     type: String,
-    required: true,
+    required: false,
     minlength: [2, "Please enter a word with at least 2 characters or 'none' if not existent."],
   },
   exampleSentence: {
     type: String,
     required: false
+  },
+  user: {
+    type: String,
+    required: false,
+    minlength: [1, "Please enter a word with at least 2 characters or 'none' if not existent."],
   },
   
   createdAt: { type: Date, default: Date.now },

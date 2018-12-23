@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Games from "./pages/Games";
-import WordList from "./pages/WordList";
+// import WordList from "./pages/WordList";
+import AddWord from "./pages/AddWord";
 import SignUp from "./pages/SignUp";
 import Navbar from "./components/Navbar";
 import Wrapper from "./components/Wrapper";
@@ -21,10 +22,11 @@ const App = () => (
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signUp" component={SignUp} />
-          <Route exact path="/words/:id" component={WordList} />
+          {/* <Route exact path="/words/:id" component={WordList} />
           <Route exact path="/words/nouns" component={WordList} />
           <Route exact path="/words/verbs" component={WordList} />
-          <Route exact path="/words/adjectives" component={WordList} />
+          <Route exact path="/words/adjectives" component={WordList} /> */}
+          <Route exact path="/words/addword/" component={AddWord} />
           <Route exact path="/games" component={Games} />
           <Route exact path="/about" component={About} />
         </Switch>

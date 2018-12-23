@@ -7,7 +7,7 @@ const Navbar = props => (
       <h1 id="home-h1"><a id="home" href="/">Home</a></h1>
       <div className="navigation">
         <a id="games" href="/games">Play!</a>
-        <a id="words" href="/words">Add Words</a>
+        <a id="words" href="/words/addword">Add Words</a>
         <a id="feedback" href="mailto:deb@ztallohs@gmail.com">Feedback</a>
         <a id="about" href="/about">About</a>
         <a id="login" href="/login">Login</a>

@@ -5,7 +5,7 @@ export default {
     return axios.get("/api/words" + id);
   },
   getWords: function() {
-    console.log("inside getWords");
+    // console.log("inside getWords");
     return axios.get("/api/words");
   },
   getNouns: function() {
@@ -18,8 +18,8 @@ export default {
     return axios.get("/api/words/adjectives");
   },
   saveWord: function(wordData) {
-    //console.log("inside saveNoun: ", wordData);
-    return axios.post("/api/words/", wordData);
+    console.log("inside saveNoun: ", wordData);
+    return axios.post("/api/words/addword", wordData);
   },
   deleteWord: function(id) {
     return axios.delete("/api/words/", id);

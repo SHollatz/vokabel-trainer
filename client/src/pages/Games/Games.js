@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import WordCard from "../../components/wordCard";
-import { Link } from "react-router-dom";
 import "./Games.css";
+import ResultsTable from "../../components/ResultsTable";
+
+let visibility = ["visible", "visible", "visible", "visible", "visible", "visible", "visible", "visible",
+  "visible", "visible", "visible", "visible", "visible", "visible", "visible", "visible"]
+
+let results = [];
 
 class Games extends Component {
   state = {
@@ -11,7 +16,9 @@ class Games extends Component {
     randomWordsWithArticles: [],
     clickCounter: 0,
     clicked1: {},
-    message: "Welcome!"
+    message: "Welcome!",
+    visibility: visibility,
+    results: results
   };
 
   componentDidMount() {
@@ -22,9 +29,12 @@ class Games extends Component {
     API.getWords()
       .then(res => {
         //console.log(res)
+        visibility = ["visible", "visible", "visible", "visible", "visible", "visible", "visible", "visible",
+          "visible", "visible", "visible", "visible", "visible", "visible", "visible", "visible"]
+        results = []
         const articles = [];
         let wordsArray = res.data;
-        console.log("words", wordsArray);
+        // console.log("words", wordsArray);
         this.shuffle(wordsArray);
         let resizedWordsArray = wordsArray.splice(0, 8);
         let words = resizedWordsArray.map(word => {
@@ -32,37 +42,41 @@ class Games extends Component {
           //console.log("word.word", word.word);
           return [word._id, word.word, word.article];
         });
-        console.log("words", words);
-        console.log("articles", articles);
+        // console.log("words", words);
+        // console.log("articles", articles);
         this.shuffle(articles)
-        console.log("articles", articles);
+        // console.log("articles", articles);
         this.setState({
+          visibility: visibility,
           words: words,
-          articles: articles
+          articles: articles,
+          results: results
         });
       }).catch(err => console.log("inside loadWords", err));
   }
 
   shuffle = (array) => {
-    console.log("array", array);
+    // console.log("this.state.visibility[0] ", this.state.visibility);
+
+    // console.log("array", array);
     let tmp, current, top = array.length;
-    console.log("top", top);
+    // console.log("top", top);
     if (top) while (--top) {
       current = Math.floor(Math.random() * (top + 1));
-      console.log("current", current);
+      // console.log("current", current);
       tmp = array[current];
       array[current] = array[top];
       array[top] = tmp;
     }
-    console.log("array after", array);
+    // console.log("array after", array);
     //console.log("resizedArray ", resizedArray);
     return array;
   }
 
   handleClick = event => {
     event.preventDefault();
-    console.log("event.target ", event.target);
-    
+    // console.log("event.target ", event.target);
+
     let clickCounter = this.state.clickCounter + 1;
     if (clickCounter === 1) {
       this.setState({
@@ -79,41 +93,56 @@ class Games extends Component {
   checkMatch = (clicked2) => {
     const clicked1 = this.state.clicked1;
     const id_1 = clicked1.attributes.getNamedItem('id').value;
+    const word_1 = clicked1.attributes.getNamedItem('word').value;
     const partner_1 = clicked1.attributes.getNamedItem('partner').value;
-    const category_1 = clicked1.attributes.getNamedItem('class').value;
+    let name_1 = clicked1.attributes.getNamedItem('name').value;
     const id_2 = clicked2.attributes.getNamedItem('id').value;
+    const word_2 = clicked2.attributes.getNamedItem('word').value;
     const partner_2 = clicked2.attributes.getNamedItem('partner').value;
-    const category_2 = clicked2.attributes.getNamedItem('class').value;
+    let name_2 = clicked2.attributes.getNamedItem('name').value;
 
-    if (category_1 === category_2) {
+    if (name_1 === name_2) {
       this.setState({
         message: "Both words are of the same kind. Try again!"
       })
     } else {
-      if (category_1 === "word") {
-        if (partner_1 === id_2) {
+      if (name_1 === "word") {
+        if (partner_1 === word_2) {
+          // results = results + [word_2 + ' ' + word_1];
+          results.push(word_2 + ' ' + word_1);
+          visibility[id_1] = "hidden";
+          visibility[id_2] = "hidden";
           this.setState({
-            message: "It's a match!"
+            message: "It's a match!",
+            visibility: visibility,
+            results: results
           });
         } else {
           this.setState({
             message: "It's not a match. Try again!"
           })
         }
-      } else if (category_2 === "word") {
-        if (partner_2 === id_1) {
+      } else if (name_2 === "word") {
+        if (partner_2 === word_1) {
+          // results = results + [word_1 + ' ' + word_2];
+          results.push(word_1 + ' ' + word_2);
+          visibility[id_1] = "hidden";
+          visibility[id_2] = "hidden";
           this.setState({
-            message: "It's a match!"
+            message: "It's a match!",
+            visibility: visibility,
+            results: results
           });
         } else {
           this.setState({
             message: "It's not a match. Try again!"
           })
         }
-      } 
-
+      }
     }
+    // console.log("results ", results);
     this.resetClickState();
+    this.finishRound();
   }
 
   resetClickState = () => {
@@ -123,19 +152,40 @@ class Games extends Component {
     })
   }
 
+  finishRound = () => {
+    for (let i=0; i < visibility.length; i++) {
+      // console.log("visibility[i] ", visibility[i]);
+      if (visibility[i] === "visible") {
+        // console.log("inside finishRound, if ")
+        return;
+      }
+    }
+    this.setState({
+      message: "Congratulations! You have matched all pairs! Try again!"
+    });
+  }
+
   render() {
     return (
       <div className="main-games">
         <h2 id="games_title">Find the Matching Pairs!</h2>
-        <button className="animated shake" id="start">Start!</button>
+        <button
+          className="animated shake"
+          id="start"
+          onClick={this.loadWords}
+        >New Words!</button>
         <br className="clearfloat"></br>
         <hr></hr>
+        <ResultsTable
+          pairs={this.state.results}
+        ></ResultsTable>
         <div className="cards-container">
-          {this.state.words.map(word => (
+          {this.state.words.map((word, index) => (
             <WordCard
               key={word[0]}
-              className="word"
-              id={word[1]}
+              className={this.state.visibility[index]}
+              id={index}
+              name="word"
               word={word[1]}
               partner={word[2]}
               onClick={this.handleClick}
@@ -144,8 +194,9 @@ class Games extends Component {
           {this.state.articles.map((article, index) => (
             <WordCard
               key={index}
-              className="article"
-              id={article}
+              className={this.state.visibility[index + 8]}
+              name="article"
+              id={index + 8}
               word={article}
               partner=""
               onClick={this.handleClick}

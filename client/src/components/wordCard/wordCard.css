@@ -1,5 +1,4 @@
-.word,
-.article {
+.visible {
   height: 120px;
   width: 200px;
   margin: 5px;
@@ -11,4 +10,15 @@
   font-weight: bold;
   letter-spacing: 2px;
   font-size: 16px;
+}
+
+.hidden {
+  visibility: hidden;
+  height: 120px;
+  width: 200px;
+  margin: 5px;
+  background-color: #ebf4fa;
+  color: #ebf4fa;
+  border: none;
+  float: left;
 }

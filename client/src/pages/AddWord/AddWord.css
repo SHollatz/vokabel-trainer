@@ -1,0 +1,11 @@
+.main-addWord {
+  width: 960px;
+  height: 600px;
+  margin: 30px auto 100px auto;
+  padding: 40px 0px 40px 55px;
+  border-radius: 5px;
+  font-family: 'Inconsolata', monospace;
+  background-image:linear-gradient(to top left, #cbe6f8, #ebf4fa);
+  position: relative;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

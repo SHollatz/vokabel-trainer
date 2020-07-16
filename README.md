@@ -8,7 +8,7 @@ Under "Add Words" you can add nouns to the database, which will show up randomly
 If you have any suggestions or ideas, please do not hesitate to send me an email under "Feedback".
 
 # Used Technology
-Database: MongoDB
+Database: MySQL 
 React
 Node.js (npm packages express, axios, mongodb, mongoose, react-router-dom)
 jQuery, CSS, Bootstrap, Animated.CSS, HTML

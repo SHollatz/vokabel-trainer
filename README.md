@@ -21,7 +21,7 @@ not published yet
 Sabine Hollatz
 
 # License
-UNLICENSED
+Please get in touch with me if you would like to use it.
 
 # Contact
 ztallohs@gmail.com

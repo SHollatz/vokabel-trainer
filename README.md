@@ -13,6 +13,8 @@ React
 Node.js (npm packages express, axios, mongodb, mongoose, react-router-dom)
 jQuery, CSS, Bootstrap, Animated.CSS, HTML
 
+# Further Development
+New Database Design: https://github.com/SHollatz/Database_vocabTrainer/blob/master/CSPB3287_SHollatz_project.ipynb
 
 # Online Version
 not published yet
